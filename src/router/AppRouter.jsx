@@ -9,6 +9,9 @@ const Courses = lazy(() => import("../_root/pages/Courses"));
 const Signin = lazy(() => import("../_auth/layouts/Signin"));
 const Signup = lazy(() => import("../_auth/layouts/Signup"));
 const ForgotPassword = lazy(() => import("../_auth/layouts/ForgotPassword"));
+const CourseFullDetails = lazy(() =>
+  import("../_root/pages/CourseFullDetails")
+);
 
 const AppRouter = createBrowserRouter([
   {
@@ -26,6 +29,10 @@ const AppRouter = createBrowserRouter([
       {
         path: "/courses",
         element: <Courses />,
+      },
+      {
+        path: "/course/:id",
+        element: <CourseFullDetails />,
       },
     ],
   },

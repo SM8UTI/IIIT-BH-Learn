@@ -73,7 +73,7 @@ import RouterData from "../../../router/RouterData";
 
 const Courses = () => {
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState("all");
+  // const [activeTab, setActiveTab] = useState("all");
   // const tabs = [
   //   {
   //     name: "All Courses",
@@ -95,10 +95,6 @@ const Courses = () => {
 
   const { courses, loading, error, refetch } = useCourses();
   const token = Cookies.get("token");
-
-  useEffect(() => {
-    console.log(courses);
-  }, []);
 
   return courses && token ? (
     <div className="w-full h-full py-24">

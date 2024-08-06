@@ -6,10 +6,12 @@ import { useEffect, useState } from "react";
 //   RiTimeLine,
 // } from "react-icons/ri";
 import { CourseImages } from "../../data/CourseImage";
+import { useNavigate } from "react-router-dom";
 
 /* eslint-disable react/prop-types */
 const CourseCard = ({ data }) => {
   const [imageUrl, setImageUrl] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (data.toLowerCase().includes("figma")) {
@@ -22,7 +24,12 @@ const CourseCard = ({ data }) => {
   }, [data]);
 
   return (
-    <div className="border border-text/15 rounded-lg overflow-hidden cursor-pointer">
+    <div
+      className="border border-text/15 rounded-lg overflow-hidden cursor-pointer"
+      onClick={() => {
+        navigate(`/course/${encodeURIComponent(data)}`);
+      }}
+    >
       <div className="p-4 flex flex-col gap-4">
         <div className="w-full h-full max-h-[150px] rounded overflow-hidden">
           <img
