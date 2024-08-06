@@ -17,7 +17,7 @@ import logo from "../../assets/logo.svg";
 
 const ForgotPassword = () => {
   useEffect(() => {
-    document.title = "Forgot Password | Sifra";
+    document.title = "Forgot Password | IIIT-BH Learn";
   }, []);
 
   const [data, setData] = useState({
