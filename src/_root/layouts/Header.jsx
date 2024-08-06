@@ -123,6 +123,14 @@ const Header = () => {
                 </NavLink>
               );
             })}
+            <Button
+              className="font-primary capitalize text-base font-semibold bg-secondary text-text rounded-full BoxShadow shadow-none hover:shadow-none"
+              onClick={() => {
+                navigate(RouterData.auth.login);
+              }}
+            >
+              <span>Get Started</span>
+            </Button>
           </nav>
           <div className="text-center text-sm text-text/70">
             <p>Maintained by Tech Society IIIT Bhubaneswar</p>

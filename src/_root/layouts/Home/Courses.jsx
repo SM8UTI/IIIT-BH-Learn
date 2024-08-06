@@ -102,7 +102,7 @@ const Courses = () => {
           </p>
         </div>
         <div className="flex flex-col items-center mt-8 w-full">
-          <div className=" flex flex-wrap justify-center gap-2 items-center border-b border-darkPrimary/15">
+          <div className=" flex flex-wrap justify-center gap-2 items-center border-b border-darkPrimary/15 gap-y-8">
             {tabs.map((tab, index) => (
               <button
                 key={index}
