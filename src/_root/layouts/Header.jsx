@@ -65,7 +65,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="py-5 border-b border-darkPrimary/20 sticky top-0 left-0 bg-white z-[999]">
+      <div className="py-5 border-b border-darkPrimary/20 sticky  bg-white z-[999]">
         <Wrapper>
           <div className="flex flex-row items-center justify-between">
             <div className="logo w-full max-w-[160px]">
@@ -126,7 +126,7 @@ const Header = () => {
                   />
                   <Button
                     onClick={handleLogout}
-                    className="bg-transparent border-none rounded-full text-text/80 flex flex-row items-center justify-center shadow-none hover:shadow-none font-primary font-medium gap-2 text-xl p-0 "
+                    className="bg-transparent hidden sm:flex border-none rounded-full text-text/80  flex-row items-center justify-center shadow-none hover:shadow-none font-primary font-medium gap-2 text-xl p-0 "
                   >
                     <RiLogoutBoxLine />
                   </Button>
@@ -185,18 +185,9 @@ const Header = () => {
                 </NavLink>
               );
             })}
-            {!token && (
-              <Button
-                className="font-primary capitalize text-base font-semibold bg-secondary text-text rounded-full BoxShadow shadow-none hover:shadow-none hidden sm:flex"
-                onClick={() => {
-                  navigate(RouterData.auth.login);
-                }}
-              >
-                <span>Get Started</span>
-              </Button>
-            )}
-            {token &&
-              (loading ? (
+
+            {token ? (
+              loading ? (
                 <SkeletonTheme>
                   <div className="flex flex-row items-center gap-2 mt-4">
                     <Skeleton width={50} height={50} borderRadius={500} />
@@ -232,7 +223,17 @@ const Header = () => {
                     <span>Logout</span>
                   </Button>
                 </>
-              ))}
+              )
+            ) : (
+              <Button
+                className="font-primary capitalize text-base font-semibold bg-secondary text-text rounded-full BoxShadow shadow-none hover:shadow-none  flex"
+                onClick={() => {
+                  navigate(RouterData.auth.login);
+                }}
+              >
+                <span>Get Started</span>
+              </Button>
+            )}
           </nav>
           <div className="text-center text-sm text-text/70">
             <p>Maintained by Tech Society IIIT Bhubaneswar</p>

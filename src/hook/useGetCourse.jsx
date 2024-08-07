@@ -22,6 +22,7 @@ const useGetCourse = (id) => {
       const filteredArray = response.data.courses.filter(
         (item) => item !== "__MACOSX"
       );
+      console.log("Filtered Array:", filteredArray);
 
       setCourse(filteredArray);
       setError(null);
