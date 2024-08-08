@@ -14,8 +14,8 @@ import PrimaryButton from "../../components/PrimaryButton";
 
 const Signin = () => {
   const [data, setData] = useState({
-    usernameOrEmail: "b121065@iiit-bh.ac.in",
-    password: "Admin@123",
+    usernameOrEmail: "",
+    password: "",
   });
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({
