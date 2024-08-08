@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 
 const Courses = () => {
-  const { courses, loading, error, refetch } = useCourses();
+  const { courses, loading } = useCourses();
   const navigate = useNavigate();
   const token = Cookies.get("token");
   return (

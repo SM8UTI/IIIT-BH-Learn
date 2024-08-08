@@ -19,10 +19,16 @@ const useGetCourse = (id) => {
         },
       });
 
-      const filteredArray = response.data.courses.filter(
-        (item) => item !== "__MACOSX"
-      );
-      console.log("Filtered Array:", filteredArray);
+      // console.log("Response:", response.data.courses);
+
+      const filteredArray = response.data.courses
+        .filter((item) => item !== "__MACOSX")
+        .sort((a, b) => {
+          const numA = parseInt(a.split(".")[0]);
+          const numB = parseInt(b.split(".")[0]);
+          return numA - numB;
+        });
+      // console.log("Filtered Array:", filteredArray);
 
       setCourse(filteredArray);
       setError(null);
